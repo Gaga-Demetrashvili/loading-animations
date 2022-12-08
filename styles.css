@@ -1,0 +1,512 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Diplomata+SC&family=La+Belle+Aurore&family=Nerko+One&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nerko One", cursive;
+}
+
+.animation {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.animation__container {
+  width: 200px;
+  height: 200px;
+}
+
+.animation__section,
+.animation__container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.section-1 {
+  background-color: rgb(220, 20, 60, 0.2);
+}
+
+.section-2 {
+  background-color: rgb(138, 43, 226, 0.2);
+}
+
+.section-3 {
+  background-color: rgb(255, 69, 0, 0.2);
+}
+
+.section-4 {
+  grid-column: 1 / -1;
+  background-color: rgba(255, 243, 80, 0.3);
+}
+
+.section-5 {
+  background-color: rgb(154, 205, 50, 0.3);
+}
+
+.section-6 {
+  background-color: rgb(218, 165, 32, 0.3);
+}
+
+.section-7 {
+  background-color: rgb(255, 192, 203, 0.7);
+}
+
+/* ~ Animation Loading ~ */
+
+.animation__loading__bar {
+  width: 140px;
+  height: 20px;
+}
+
+.animation__loading__bar::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: linear-gradient(to right, rgb(0, 128, 0, 0.7), greenyellow);
+
+  animation-name: loadingBarAnimation;
+  animation-duration: 3s;
+  transform-origin: left;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes loadingBarAnimation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* ~ Animation Balls Moving on circle ~ */
+
+.animation__balls__moving {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+
+  animation-name: ballsMovingOnCircle;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.balls {
+  width: 8px;
+  height: 8px;
+  background-color: darkslategray;
+  border-radius: 50%;
+}
+
+.ball-1 {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.ball-2 {
+  position: absolute;
+  right: 16px;
+  top: 9px;
+}
+
+.ball-3 {
+  position: absolute;
+  right: 0px;
+  top: 35px;
+}
+
+.ball-4 {
+  position: absolute;
+  right: 3px;
+  top: 62px;
+}
+
+.ball-5 {
+  position: absolute;
+  right: 18px;
+  top: 81px;
+}
+
+.ball-6 {
+  position: absolute;
+  right: 43px;
+  top: 90px;
+}
+
+.ball-7 {
+  position: absolute;
+  right: 71px;
+  top: 82px;
+}
+
+.ball-8 {
+  position: absolute;
+  right: 88px;
+  top: 59px;
+}
+
+.ball-9 {
+  position: absolute;
+  right: 88px;
+  top: 32px;
+}
+
+.ball-10 {
+  position: absolute;
+  right: 74px;
+  top: 10px;
+}
+
+.balls:first-child {
+  opacity: 10%;
+}
+
+.balls:nth-child(2) {
+  opacity: 20%;
+}
+
+.balls:nth-child(3) {
+  opacity: 30%;
+}
+
+.balls:nth-child(4) {
+  opacity: 40%;
+}
+
+.balls:nth-child(5) {
+  opacity: 50%;
+}
+
+.balls:nth-child(6) {
+  opacity: 60%;
+}
+
+.balls:nth-child(7) {
+  opacity: 70%;
+}
+
+.balls:nth-child(8) {
+  opacity: 80%;
+}
+
+.balls:nth-child(9) {
+  opacity: 90%;
+}
+
+.balls:nth-child(10) {
+  opacity: 100%;
+}
+
+@keyframes ballsMovingOnCircle {
+  0% {
+    transform: rotate(0deg);
+    opacity: 25%;
+  }
+  25% {
+    opacity: 50%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  75% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 25%;
+    transform: rotate(360deg);
+  }
+}
+
+/* ~ Animation Lines ~ */
+
+.animation__lines {
+  width: 140px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lines {
+  width: 20px;
+  background-color: green;
+  animation-name: animationLines;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.line-1,
+.line-5 {
+  height: 100%;
+  animation-delay: 0.5s;
+}
+
+.line-2,
+.line-4 {
+  height: 50%;
+  animation-delay: 1s;
+}
+
+.line-3 {
+  height: 30%;
+  animation-delay: 1.5s;
+}
+
+@keyframes animationLines {
+  0% {
+    height: 30%;
+  }
+  25% {
+    height: 60%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 60%;
+  }
+  100% {
+    height: 30%;
+  }
+}
+
+/* ~ Animation dots ~ */
+
+.animation__dots {
+  display: grid;
+  width: 90px;
+  height: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 7px;
+}
+
+.dots {
+  width: 100%;
+  height: 100%;
+  background-color: #777;
+  border-radius: 50%;
+}
+
+.dots:nth-child(even) {
+  animation-name: flicker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.dots:nth-child(odd) {
+  animation-name: flicker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.3;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* ~ Animation scroll ~ */
+
+.animation__scroll {
+  width: 28px;
+  height: 48px;
+  border: 2px solid black;
+  border-radius: 100px;
+  display: flex;
+  padding: 8px 0 4px;
+  justify-content: center;
+}
+
+.animation__scroll::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: black;
+  animation-name: scroll;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  position: relative;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(22px);
+    opacity: 0;
+  }
+}
+
+/* ~ Animation text ~ */
+
+.section-4 .animation__container {
+  border: none;
+  width: max-content;
+  height: max-content;
+}
+
+.heading-1 {
+  padding: 4px 8px;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 170px;
+  background-image: url(https://images.unsplash.com/flagged/photo-1579268351234-073f85929562?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+  letter-spacing: 12px;
+  line-height: 1.1;
+  background-position: 654px;
+  animation-name: textAnimation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes textAnimation {
+  0% {
+    background-position: 0px;
+    background-size: 150px;
+  }
+  5% {
+    background-position: 5px;
+    background-size: 160px;
+  }
+  10% {
+    background-position: 10px;
+    background-size: 170px;
+  }
+  15% {
+    background-position: 15px;
+    background-size: 180px;
+  }
+  20% {
+    background-position: 20px;
+    background-size: 190px;
+  }
+  25% {
+    background-position: 25px;
+    background-size: 200px;
+  }
+  30% {
+    background-position: 30px;
+    background-size: 210px;
+  }
+  35% {
+    background-position: 35px;
+    background-size: 220px;
+  }
+  40% {
+    background-position: 40px;
+    background-size: 230px;
+  }
+  45% {
+    background-position: 45px;
+    background-size: 240px;
+  }
+  50% {
+    background-position: 50px;
+    background-size: 250px;
+  }
+  55% {
+    background-position: 55px;
+    background-size: 260px;
+  }
+  60% {
+    background-position: 60px;
+    background-size: 270px;
+  }
+  65% {
+    background-position: 65px;
+    background-size: 280px;
+  }
+  70% {
+    background-position: 70px;
+    background-size: 290px;
+  }
+  75% {
+    background-position: 75px;
+    background-size: 300px;
+  }
+  80% {
+    background-position: 80px;
+    background-size: 310px;
+  }
+  85% {
+    background-position: 85px;
+    background-size: 320px;
+  }
+  90% {
+    background-position: 90px;
+    background-size: 330px;
+  }
+  95% {
+    background-position: 95px;
+    background-size: 340px;
+  }
+  100% {
+    background-position: 100px;
+    background-size: 350px;
+  }
+}
+
+/* ~ Animation spinner ~ */
+
+:root {
+  --primary-color: #8b7e74;
+  --secondary-color: #f3efe0;
+}
+
+.animation__spinner {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border: 3px solid rgb(174, 163, 163);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
